@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+//Compiler version gcc  6.3.0
+
+int main()
+{
+  int i=0,size=100;
+  char *string;
+  printf("input a string:");
+  string=(char*)malloc(size);
+  getline(&string,&size,stdin);
+  while(string[i])
+  {
+    string[i]=tolower(string[i]);
+    i++;
+    }
+  printf("\n the string in lowercase is as follows:");
+  puts(string);
+  i=0;
+  while(string[i])
+  {
+    string[i]=toupper(string[i]);
+    i++;
+    }
+  printf("\n the string in uppercase is as follows:");
+  puts(string);
+  return 0;
+}

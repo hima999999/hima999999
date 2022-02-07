@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<string.h>
+void generatepermutation(char*,int,int);
+int main()
+{
+  char str[]="abcd";
+  int n=strlen(str);
+   printf("all the permutaions of the string are:\n");
+   generatepermutation(str,0,n);
+   }
+   void generatepermutation(char*str,const int start,int end)
+   {
+     char temp;
+     int i,j;
+     for(i=start;i<end-1;++i)
+     {
+       for(j=i+1;j<end;++j)
+       {
+         temp=str[i];
+         str[i]=str[j];
+         str[j]=temp;
+         generatepermutation(str,i+1,end);
+         temp=str[i];
+         str[i]=str[j];
+         str[j]=temp;
+         }
+         }
+         printf("%s\n",str);
+         return 0;
+}
